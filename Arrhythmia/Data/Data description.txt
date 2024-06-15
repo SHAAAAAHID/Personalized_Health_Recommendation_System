@@ -1,0 +1,33 @@
+dailyActivity_merged, dailyCalories_merged, dailyIntensities_merged, dailySteps_merged, heartrate_seconds_merged, hourlyCalories_merged, hourlyIntensities_merged, hourlySteps_merged, minuteCaloriesNarrow_merged, minuteCaloriesWide_merged, minuteIntensitiesNarrow_merged, minuteIntensitiesWide_merged, minuteMETsNarrow_merged, minuteSleep_merged, minuteStepsNarrow_merged,
+minuteStepsWide_merged, sleepDay_merged, weightLogInfo_merged
+
+
+1. `dailyActivity_merged`: This likely contains aggregated daily activity data, which could include information about the type and duration of activities performed each day.
+
+2. `dailyCalories_merged`: This probably contains information about the number of calories burned on a daily basis.
+
+3. `dailyIntensities_merged`: This could include data on the intensity of activities performed on a daily basis. Intensity levels could be categorized as low, moderate, high, etc.
+
+4. `dailySteps_merged`: This likely includes the number of steps taken each day.
+
+5. `heartrate_seconds_merged`: This might include heart rate data collected at second-level intervals. It could provide insights into heart rate fluctuations during different activities or times of the day.
+
+6. `hourlyCalories_merged`: This probably contains information about the number of calories burned on an hourly basis.
+
+7. `hourlyIntensities_merged`: This could include data on the intensity of activities performed on an hourly basis.
+
+8. `hourlySteps_merged`: This likely includes the number of steps taken each hour.
+
+9. `minuteCaloriesNarrow_merged` and `minuteCaloriesWide_merged`: These probably contain minute-level data about calories burned, with "narrow" and "wide" possibly referring to different measurement methods or levels of granularity.
+
+10. `minuteIntensitiesNarrow_merged` and `minuteIntensitiesWide_merged`: Similar to the calorie data, these likely contain minute-level data on activity intensities, with "narrow" and "wide" potentially denoting different types of intensity measurement.
+
+11. `minuteMETsNarrow_merged`: This might contain minute-level data on METs (Metabolic Equivalent of Task), which is a measure of energy expenditure during physical activities.
+
+12. `minuteSleep_merged`: This likely includes minute-level data related to sleep patterns and duration.
+
+13. `minuteStepsNarrow_merged` and `minuteStepsWide_merged`: These probably contain minute-level data on the number of steps taken, with "narrow" and "wide" potentially indicating different methods of measurement.
+
+14. `sleepDay_merged`: This likely contains aggregated data about sleep patterns and duration on a daily basis.
+
+15. `weightLogInfo_merged`: This probably includes information about weight measurements over time.
