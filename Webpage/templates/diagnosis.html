@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{{ url_for('static',filename='images/logo 1.png')}}" type="">
+
+  <title> Know Your Health </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/css/bootstrap.css')}}"/>
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static',filename='/css/font-awesome.min.css')}}"  />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static',filename='/css/style.css')}}" rel="stylesheet" />
+
+  <!-- responsive style -->
+  <link href="{{ url_for('static',filename='/css/responsive.css')}}" rel="stylesheet" />
+
+<script src="https://kit.fontawesome.com/5cb17b0296.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{{ url_for('index')}}">
+            <span>
+              Know Your Health
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link"  href="{{ url_for('index')}}">Home </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link"  href="{{ url_for('about')}}"> About <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('contact')}}">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+<!-- Profile section -->
+<section class="Profile_section layout_padding">
+  <div class="container">
+    <h2 class="text-center">Create Profile</h2>
+    <form class="health-profile-form" id="profile-form" action="/submit_profile" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <!-- First Column -->
+        <div class="col-md-6">
+          <label for="First Name">First Name:</label>
+          <input type="text" id="First Name" name="First Name" required><br>
+
+          <label for="Last Name">Last Name:</label>
+          <input type="text" id="Last Name" name="Last Name" required><br>
+
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required><br>
+
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select><br>
+
+          <label for="maritalStatus">Marital Status:</label>
+          <select id="maritalStatus" name="maritalStatus" required>
+            <option value="" disabled selected>Select Marital Status</option>
+            <option value="Single">Single</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Married">Married</option>
+          </select><br>
+
+          <label for="workType">Work Type:</label>
+          <select id="workType" name="workType" required>
+            <option value="" disabled selected>Select Work Type</option>
+            <option value="Government Job">Government Job</option>
+            <option value="Never worked">Never worked</option>
+            <option value="Private">Private</option>
+            <option value="Self-employed">Self-employed</option>
+          </select><br>
+
+          <label for="hypertension">Do you currently have hypertension?</label>
+          <select id="hypertension" name="hypertension" required>
+            <option value="" disabled selected>Select</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select><br>
+
+          <label for="residenceType">Residence Type:</label>
+          <select id="residenceType" name="residenceType" required>
+            <option value="" disabled selected>Select Residence Type</option>
+            <option value="Rural">Rural</option>
+            <option value="Urban">Urban</option>
+          </select><br>
+
+
+        </div>
+        <!-- Second Column -->
+        <div class="col-md-6">
+          <label for="bmiOption">BMI (Body Mass Index):</label>
+          <select id="bmiOption" name="bmiOption" required onchange="toggleBMIInput()">
+            <option value="" disabled selected>Select BMI Option</option>
+            <option value="direct">Enter BMI Value</option>
+            <option value="calculate">Enter Height and Weight</option>
+          </select><br>
+
+          <div id="heightWeightInputs" style="display: none;">
+            <label for="height">Height (in cm):</label>
+            <input type="number" id="height" name="height" onchange="calculateBMI()"><br>
+
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" onchange="calculateBMI()"><br>
+          </div>
+
+          <div id="bmiInput" style="display: none;">
+            <label for="bmi">BMI (Body Mass Index):</label>
+            <input type="text" id="bmi" name="bmi"><br>
+          </div>
+
+          <label for="heartDisease">Do you currently have a heart disease?</label>
+          <select id="heartDisease" name="heartDisease" required>
+            <option value="" disabled selected>Select</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select><br>
+
+          <label for="smokingStatus">Smoking Status:</label>
+          <select id="smokingStatus" name="smokingStatus" required>
+            <option value="" disabled selected>Select Smoking Status</option>
+            <option value="Non-smoker">Non-smoker</option>
+            <option value="Formerly Smoked">Formerly Smoked</option>
+            <option value="Currently Smokes">Currently Smokes</option>
+          </select><br>
+
+          <label for="physicalActivity">Physical Activity:</label>
+          <select id="physicalActivity" name="physicalActivity" required>
+            <option value="" disabled selected>Select Physical Activity</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Low">Low</option>
+            <option value="High">High</option>
+          </select><br>
+
+          <label for="strokeHistory">Stroke History:</label>
+          <select id="strokeHistory" name="strokeHistory" required>
+            <option value="" disabled selected>Select Stroke History</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select><br>
+
+          <label for="familyStrokeHistory">Family History of Stroke:</label>
+          <select id="familyStrokeHistory" name="familyStrokeHistory" required>
+            <option value="" disabled selected>Select Family Stroke History</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select><br>
+        </div>
+      </div>
+      <!-- Submit Button -->
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+<script>
+// Function to toggle visibility of BMI input options
+function toggleBMIInput() {
+    var option = document.getElementById("bmiOption").value;
+    var heightWeightInputs = document.getElementById("heightWeightInputs");
+    var bmiInput = document.getElementById("bmiInput");
+
+    if (option === "calculate") {
+        heightWeightInputs.style.display = "block";
+        bmiInput.style.display = "none";
+    } else if (option === "direct") {
+        heightWeightInputs.style.display = "none";
+        bmiInput.style.display = "block";
+    }
+}
+
+// Function to calculate BMI based on height and weight
+function calculateBMI() {
+    var height = document.getElementById("height").value;
+    var weight = document.getElementById("weight").value;
+    var bmiInput = document.getElementById("bmi");
+
+    // Ensure height and weight are provided
+    if (height && weight) {
+        // Calculate BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
+        var bmi = weight / ((height / 100) * (height / 100));
+        bmiInput.value = bmi.toFixed(2);
+
+        // Automatically select the "Enter BMI Value" option
+        document.getElementById("bmiOption").value = "direct";
+        toggleBMIInput();
+    }
+}
+
+// Function to redirect to dataform.html after submitting the form
+function redirectToDataForm() {
+    // Redirect to dataform.html after a delay
+    setTimeout(function() {
+        window.location.href = '/dataform';
+    }, 3000); // 3 seconds delay
+}
+
+// Submit form using AJAX
+document.querySelector('.health-profile-form').addEventListener('submit', function(event) {
+    // Prevent the form from submitting normally
+    event.preventDefault();
+
+    // Collect form data
+    var formData = new FormData(this);
+
+    // Send form data using AJAX
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', this.action);
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            // Call the function to delay redirection
+            redirectToDataForm();
+        } else {
+            // Form submission failed
+            console.error('Form submission failed: ' + xhr.status);
+            alert('Form submission failed. Please try again.');
+        }
+    };
+    xhr.onerror = function() {
+        console.error('Request failed');
+        alert('Request failed. Please try again.');
+    };
+    xhr.send(formData);
+});
+</script>
+
+  <!-- End Profile section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>
+              Reach at..
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="footer_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>
+              About
+            </h4>
+            <p>
+              Know Your Health offers innovative, user-friendly solutions for early disease detection, empowering individuals to proactively manage their well-being and improve public health outcomes.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="footer_links">
+              <a class=""  href="{{ url_for('index')}}">
+                Home
+              </a>
+              <a class="active"  href="{{ url_for('about')}}">
+                About
+              </a>
+              <a class=""  href="{{ url_for('contact')}}" >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col ">
+          <h4>
+            Newsletter
+          </h4>
+          <form action="#">
+            <input type="email" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    function uploadFile() {
+        var formData = new FormData(document.getElementById('uploadForm'));
+
+        $.ajax({
+            type: 'POST',
+            url: '/upload',  // Replace with the actual URL for your Django view
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                // Display success message on the same page
+                document.getElementById('uploadMessage').innerHTML = '<p style="color: green;">' + response + '</p>';
+            },
+            error: function(error) {
+                // Display error message on the same page
+                document.getElementById('uploadMessage').innerHTML = '<p style="color: red;">Error uploading file.</p>';
+            }
+        });
+    }
+</script>
+
+</body>
+
+</html>

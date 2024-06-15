@@ -1,0 +1,2 @@
+first_name,last_name,age,Age,sex,ever_married,Residence_type,heart_disease,hypertension,bmi,smoking_status,physical_activity,stroke_history,family_stroke_history,work_type_Govt job,work_type_Private,work_type_Self-employed,work_type_Never worked
+Ibrahim,Parkar,-1.0770805740151284,28.0,1,0,1,0,0,-0.7973453294647623,0,Moderate,0,0,TRUE,False,False,False

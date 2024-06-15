@@ -1,0 +1,17 @@
+X = [Gender	Age	Sleep Duration	Physical Activity Level	Heart Rate	Daily Steps		Systolic_BP	Diastolic_BP]
+Y = [Sleep Disorder]
+
+Accuracy (Regularized): 0.9285714285714286
+Classification Report (Regularized):
+               precision    recall  f1-score   support
+
+    Insomnia       0.92      0.86      0.89        28
+        None       0.93      0.98      0.95       113
+ Sleep Apnea       0.95      0.78      0.86        27
+
+    accuracy                           0.93       168
+   macro avg       0.93      0.87      0.90       168
+weighted avg       0.93      0.93      0.93       168
+
+Cross-Validation Scores: [0.86607143 0.98214286 0.91964286 0.97321429 0.88288288]
+Mean CV Accuracy: 0.9247908622908623

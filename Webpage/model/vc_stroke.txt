@@ -1,0 +1,2 @@
+X = sex	age	hypertension	heart_disease	ever_married	Residence_type	bmi	smoking_status	work_type_Govt job	work_type_Private	work_type_Self-employed
+y = stroke

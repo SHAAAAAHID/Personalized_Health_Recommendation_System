@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo 1.png') }}" type="">
+
+  <title>Know Your Health</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/bootstrap.css') }}" />
+
+  <!-- Fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- Font Awesome style -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/font-awesome.min.css') }}" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='/css/style.css') }}" rel="stylesheet" />
+  <!-- Responsive style -->
+  <link href="{{ url_for('static', filename='/css/responsive.css') }}" rel="stylesheet" />
+
+  <script src="https://kit.fontawesome.com/5cb17b0296.js" crossorigin="anonymous"></script>
+
+  <style>
+/* Styling for the Get Results button */
+.get-results-btn {
+margin-top: 40vh; /* Adjust the margin to vertically center the button */
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.get-results-btn:hover {
+  background-color: #0056b3;
+}
+
+
+    /* Styling for the results container */
+    .results-container {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* Center the Get Results button and the results container */
+    #get-results-btn {
+      display: block;
+      margin: 0 auto; /* Centers the button */
+    }
+
+    .results-container {
+      text-align: center; /* Centers text inside the container */
+      max-width: 600px; /* Optional: limits the width of the container */
+      margin: 0 auto; /* Centers the container */
+      margin-top: 40px;
+    }
+<!--     /* Styling for the "Nearest cure" button */-->
+<!--    .nearest-cure-btn {-->
+<!--      margin-top: 20px;-->
+<!--      padding: 12px 24px;-->
+<!--      background-color: #28a745; /* Green color */-->
+<!--      color: white;-->
+<!--      border: none;-->
+<!--      border-radius: 25px;-->
+<!--      cursor: pointer;-->
+<!--      display: inline-block;-->
+<!--      font-size: 18px;-->
+<!--      font-weight: 600;-->
+<!--      text-transform: uppercase;-->
+<!--      transition: background-color 0.3s ease;-->
+<!--    }-->
+
+<!--    .nearest-cure-btn:hover {-->
+<!--      background-color: #218838; /* Darker green on hover */-->
+<!--    }-->
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- Header section starts -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="{{ url_for('index') }}">
+            <span>Know Your Health</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('about') }}">About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('contact') }}">Contact Us <span class="sr-only">(current)</span> </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End header section -->
+  </div>
+
+  <div class="container">
+    <button class="get-results-btn" id="get-results-btn">Get Results</button>
+    <div id="results-container" class="results-container">
+      <!-- Results will be displayed here -->
+    </div>
+    <button id="nearest-cure-btn" class="get-results-btn" style="display: none; margin-right: auto; margin-left:auto; margin-bottom: auto;">Find Nearest Cure</button>
+  </div>
+
+  <!-- Footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>Reach at...</h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>Location</span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>Call +01 1234567890</span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>demo@gmail.com</span>
+              </a>
+            </div>
+          </div>
+          <div class="footer_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>About</h4>
+            <p>
+              Know Your Health offers innovative, user-friendly solutions for early disease detection, empowering individuals to proactively manage their well-being and improve public health outcomes.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>Links</h4>
+            <div class="footer_links">
+              <a class="" href="{{ url_for('index') }}">Home</a>
+              <a class="active" href="{{ url_for('about') }}">About</a>
+              <a class="" href="{{ url_for('contact') }}">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 footer_col">
+          <h4>Newsletter</h4>
+          <form action="#">
+            <input type="email" placeholder="Enter email" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer section -->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="{{ url_for('static', filename='/js/jquery-3.4.1.min.js') }}"></script>
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script type="text/javascript" src="{{ url_for('static', filename='/js/bootstrap.js') }}"></script>
+  <!-- Owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- Custom JS -->
+  <script src="{{ url_for('static', filename='/js/custom.js') }}"></script>
+
+  <!-- JavaScript to handle the Get Results button and display the results -->
+  <script>
+    // Example function to extract the disease from diagnosis messages
+    function extractDisease(messages) {
+      // Keywords or patterns associated with diseases
+      const diseaseKeywords = {
+        'Arrhythmia': ['arrhythmia'],
+        'Insomnia': ['insomnia'],
+        'Sleep Apnea': ['sleep apnea'],
+        'Stroke': ['stroke']
+        // Add more diseases and their associated keywords or patterns as needed
+      };
+
+      // Loop through the diagnosis messages
+      for (const message of messages) {
+        // Convert the message to lowercase for case-insensitive matching
+        const lowercaseMessage = message.toLowerCase();
+
+        // Check for each disease keyword
+        for (const [disease, keywords] of Object.entries(diseaseKeywords)) {
+          // Check if any of the keywords are present in the message
+          for (const keyword of keywords) {
+            if (lowercaseMessage.includes(keyword)) {
+              // Return the disease if a keyword is found
+              return disease;
+            }
+          }
+        }
+      }
+
+      // Return null if no disease is found
+      return null;
+    }
+
+    // Handle click event for the Get Results button and nearest cure button
+    document.getElementById('get-results-btn').addEventListener('click', function() {
+      fetch('/get_results', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          const messages = data.messages;
+          let resultMessage = '';
+
+          // Loop through the messages and append them to the result message
+          messages.forEach(message => {
+            resultMessage += `<p>${message}</p>`;
+          });
+
+          // Display the result message in the results container
+          const resultsContainer = document.getElementById('results-container');
+          resultsContainer.innerHTML = resultMessage;
+
+          // Show the nearest cure button
+          const nearestCureBtn = document.getElementById('nearest-cure-btn');
+          nearestCureBtn.style.display = 'block';
+
+          // Extract the disease from the diagnosis messages
+          const detectedDisease = extractDisease(messages);
+
+          // Handle click event for the nearest cure button
+          nearestCureBtn.addEventListener('click', function() {
+            if (detectedDisease) {
+              // Perform a Google Maps search for the nearest health center based on the detected disease
+              const searchQuery = `Nearest ${detectedDisease} Health Centre`;
+              const googleMapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(searchQuery)}`;
+
+              // Open a new tab with the Google Maps search
+              window.open(googleMapsUrl, '_blank');
+            } else {
+              console.error('No disease detected.');
+            }
+          });
+        })
+        .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+        });
+    });
+
+  </script>
+
+</body>
+
+</html>
