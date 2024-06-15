@@ -1,0 +1,19 @@
+Dataset Features (40,910 rows):
+
+1. gender: patient's gender (1: male; 0: female).
+2. age: patient's age (in years).
+3. hypertension: patient has ever had hypertension (1) or not (0).
+4. heart_disease: patient has ever had heart_disease(1) or not (0).
+5. ever_married**: patient married (1) or not (0).
+6. work_type: patient job type: 
+	0 - Never_worked, 
+	1 - children, 
+	2 - Govt_job, 
+	3 - Self-employed, 
+	4 - Private.
+7. Residence_type: patient area: 1 - Urban, 0 - Rural.
+8. avg_glucose_level: patient average blood sugar level.
+9. bmi: Body Mass Index.
+10. smoking_status**: 1 - smokes, 0 - never smoked.
+---
+11. **stroke**: Whether the patient has stroke (1) or not (0).
