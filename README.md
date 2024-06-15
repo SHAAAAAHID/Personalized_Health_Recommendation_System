@@ -43,18 +43,15 @@ This repository contains the code and data for the Personalized Health Recommend
 
 1. **Arrhythmia Prediction:**
    - The prediction model for arrhythmia uses Logistic Regression.
-   - Navigate to the `arrhythmia` folder.
-   - Follow the instructions in the README file within the folder to preprocess the data and run the prediction models.
+   - Navigate to the `arrhythmia` folder to access the code and data. The code includes preprocessing, model training, and implementation.
 
 2. **Sleep Apnea Prediction:**
    - The prediction model for sleep apnea uses a Random Forest Classifier.
-   - Navigate to the `sleep_apnea` folder.
-   - Follow the instructions in the README file within the folder to preprocess the data and run the prediction models.
+   - Navigate to the `sleep_apnea` folder to access the code and data. The code includes preprocessing, model training, and implementation.
 
 3. **Stroke Prediction:**
    - The prediction models for stroke include Random Forest Classifier, Decision Tree, and Voting Classifier.
-   - Navigate to the `stroke` folder.
-   - Follow the instructions in the README file within the folder to preprocess the data and run the prediction models.
+   - Navigate to the `stroke` folder to access the code and data. The code includes preprocessing, model training, and implementation.
 
 4. **Website Interaction:**
    - Once the Flask server is running, open your web browser and go to `http://127.0.0.1:5000`.
@@ -70,3 +67,5 @@ I would like to express my gratitude to my team members for their invaluable con
 - Anand Tripathi
 - Tanishque Prajapati
 - Dr. Vaqar Ansari
+
+Thank you for your hard work and dedication in making this project a success.
