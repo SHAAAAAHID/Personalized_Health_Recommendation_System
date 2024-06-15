@@ -61,14 +61,6 @@ This repository contains the code and data for the Personalized Health Recommend
    - Create a health profile, upload data from smart devices, and receive personalized health recommendations.
    - Get recommendations for nearby healthcare facilities based on the predictions.
 
-## Contributions
-
-Contributions are welcome! If you have any ideas for improvements or new features, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
 ## Acknowledgements
 
 I would like to express my gratitude to my team members for their invaluable contributions to this project:
