@@ -54,9 +54,13 @@ This repository contains the code and data for the Personalized Health Recommend
    - Navigate to the `stroke` folder to access the code and data. The code includes preprocessing, model training, and implementation.
 
 4. **Website Interaction:**
-   - Once the Flask server is running, open your web browser and go to `http://127.0.0.1:5000`.
-   - Create a health profile, upload data from smart devices, and receive personalized health recommendations.
-   - Get recommendations for nearby healthcare facilities based on the predictions.
+    - Navigate to the project directory in your terminal or command prompt.
+    - Run `python app.py` to start the Flask server locally.
+    - Open your web browser and go to `http://127.0.0.1:5000` or `http://localhost:5000` to access the application.
+    - Create a detailed health profile by filling out the provided form with personal health information, demographics, medical history, and lifestyle factors.
+    - Upload health-related data obtained from smart devices, such as physiological measurements like heart rate, blood pressure, and activity levels.
+    - Receive personalized health predictions and recommendations based on the submitted health profile and uploaded data.
+    - Get suggestions for nearby healthcare facilities where you can seek further evaluation and treatment based on the predicted health conditions.
 
 ## Acknowledgements
 
