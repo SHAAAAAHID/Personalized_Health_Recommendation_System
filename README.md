@@ -66,7 +66,6 @@ This repository contains the code and data for the Personalized Health Recommend
 
 I would like to express my gratitude to my team members for their invaluable contributions to this project:
 
-- Ibrahim Parkar
 - Sakshi Jadhav
 - Anand Tripathi
 - Tanishque Prajapati
