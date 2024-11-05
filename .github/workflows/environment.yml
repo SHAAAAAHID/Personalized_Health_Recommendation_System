@@ -1,0 +1,22 @@
+run-name: health_recommendation_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - flask=2.1.0
+  - scikit-learn=1.0.2
+  - pandas=1.3.3
+  - numpy=1.21.2
+  - matplotlib=3.4.3
+  - opencv-python=4.2.0.34
+  - opencv-contrib-python=4.2.0.34
+  - pillow=9.0.1
+  - h5py=2.10.0
+  - imutils=0.5.3
+  - xgboost
+  - pip
+  - pip:
+      - flask-cors
+      - imbalanced-learn
+      - gunicorn
